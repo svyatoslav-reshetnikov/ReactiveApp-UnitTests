@@ -24,8 +24,8 @@ class APIManager: APIProtocol {
         
         return Observable.create { observer in
             let parameters = ["fields": ""]
-            let friendsRequest = FBSDKGraphRequest.init(graphPath: "me/feed", parameters: parameters, HTTPMethod: "GET")
-            friendsRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+            let feedsRequest = FBSDKGraphRequest.init(graphPath: "me/feed", parameters: parameters, HTTPMethod: "GET")
+            feedsRequest.startWithCompletionHandler { (connection, result, error) -> Void in
                 if error != nil {
                     observer.on(.Error(error!))
                 } else {
@@ -44,13 +44,32 @@ class APIManager: APIProtocol {
     func getFeedInfo(feedId: String) -> Observable<GetFeedInfoResponse> {
         return Observable.create { observer in
             let parameters = ["fields" : "id,admin_creator,application,call_to_action,caption,created_time,description,feed_targeting,from,icon,is_hidden,is_published,link,message,message_tags,name,object_id,picture,place,privacy,properties,shares,source,status_type,story,story_tags,targeting,to,type,updated_time,with_tags"]
-            let friendsRequest = FBSDKGraphRequest.init(graphPath: "" + feedId, parameters: parameters, HTTPMethod: "GET")
-            friendsRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+            let feedInfoRequest = FBSDKGraphRequest.init(graphPath: feedId, parameters: parameters, HTTPMethod: "GET")
+            feedInfoRequest.startWithCompletionHandler { (connection, result, error) -> Void in
                 if error != nil {
                     observer.on(.Error(error!))
                 } else {
                     let getFeedInfoResponse = Mapper<GetFeedInfoResponse>().map(result)!
                     observer.on(.Next(getFeedInfoResponse))
+                    observer.on(.Completed)
+                }
+            }
+            
+            return AnonymousDisposable {
+                
+            }
+        }
+    }
+    
+    func addFeed(feedMessage: String) -> Observable<Any> {
+        return Observable.create { observer in
+            let parameters = ["message": feedMessage]
+            let addFeedRequest = FBSDKGraphRequest.init(graphPath: "me/feed", parameters: parameters, HTTPMethod: "POST")
+            addFeedRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+                if error != nil {
+                    observer.on(.Error(error!))
+                } else {
+                    observer.on(.Next(result))
                     observer.on(.Completed)
                 }
             }

@@ -35,7 +35,7 @@ class FeedsViewController: UIViewController, UITableViewDelegate {
         
         viewModel.indicator
             .bindTo(progress.rx_mbprogresshud_animating)
-            .addDisposableTo(self.disposeBag)
+            .addDisposableTo(disposeBag)
         
         feedsTableView.rx_setDelegate(self)
         

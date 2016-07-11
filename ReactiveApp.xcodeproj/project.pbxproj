@@ -18,6 +18,7 @@
 		E123BC161C56ACC800DFAAF1 /* ReactiveAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123BC151C56ACC800DFAAF1 /* ReactiveAppTests.swift */; };
 		E123BC211C56ACC800DFAAF1 /* ReactiveAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123BC201C56ACC800DFAAF1 /* ReactiveAppUITests.swift */; };
 		E19247E61D33A84900B5189E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19247E51D33A84900B5189E /* AddPostViewController.swift */; };
+		E19247E81D33B2C000B5189E /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19247E71D33B2C000B5189E /* AddPostViewModel.swift */; };
 		E19CFC271C69D6D400D16819 /* FeedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CFC261C69D6D400D16819 /* FeedInfoViewController.swift */; };
 		E19CFC291C69E01C00D16819 /* GetFeedInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CFC281C69E01C00D16819 /* GetFeedInfoResponse.swift */; };
 		E19CFC2B1C69E1CE00D16819 /* IdName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CFC2A1C69E1CE00D16819 /* IdName.swift */; };
@@ -73,6 +74,7 @@
 		E123BC201C56ACC800DFAAF1 /* ReactiveAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveAppUITests.swift; sourceTree = "<group>"; };
 		E123BC221C56ACC800DFAAF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E19247E51D33A84900B5189E /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		E19247E71D33B2C000B5189E /* AddPostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
 		E19CFC261C69D6D400D16819 /* FeedInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedInfoViewController.swift; sourceTree = "<group>"; };
 		E19CFC281C69E01C00D16819 /* GetFeedInfoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFeedInfoResponse.swift; sourceTree = "<group>"; };
 		E19CFC2A1C69E1CE00D16819 /* IdName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdName.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				E19247E51D33A84900B5189E /* AddPostViewController.swift */,
+				E19247E71D33B2C000B5189E /* AddPostViewModel.swift */,
 			);
 			name = AddPost;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19247E81D33B2C000B5189E /* AddPostViewModel.swift in Sources */,
 				E1C4C9031C68B2110023A346 /* APIManager.swift in Sources */,
 				E1C4C91D1C68D4570023A346 /* FeedTableViewCell.swift in Sources */,
 				E1C4C9181C68CEA20023A346 /* Feed.swift in Sources */,
