@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Cz-oA-cSC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Cz-oA-cSC">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +14,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,6 +27,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkh-Ic-fRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="554" y="1748"/>
+        </scene>
+        <!--Add Profile View Controller-->
+        <scene sceneID="5Y2-I8-NPX">
+            <objects>
+                <viewController id="lQo-8E-BoC" customClass="AddProfileViewController" customModule="ReactiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FoV-8O-s1N"/>
+                        <viewControllerLayoutGuide type="bottom" id="OQy-ae-Jw8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iZM-lE-cu0">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="da9-2A-Skl">
+                                <rect key="frame" x="282" y="486" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cHR-5v-kM8">
+                                <rect key="frame" x="20" y="20" width="560" height="458"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.23529411759999999" green="0.1960784314" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="da9-2A-Skl" firstAttribute="top" secondItem="cHR-5v-kM8" secondAttribute="bottom" constant="8" id="Ccd-eZ-MqT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cHR-5v-kM8" secondAttribute="leading" id="FOk-XX-P4q"/>
+                            <constraint firstItem="cHR-5v-kM8" firstAttribute="top" secondItem="FoV-8O-s1N" secondAttribute="bottom" constant="20" id="U1d-xF-cim"/>
+                            <constraint firstItem="OQy-ae-Jw8" firstAttribute="top" secondItem="da9-2A-Skl" secondAttribute="bottom" constant="20" id="Wj8-nP-jah"/>
+                            <constraint firstItem="da9-2A-Skl" firstAttribute="centerX" secondItem="iZM-lE-cu0" secondAttribute="centerX" id="X9i-nA-AoU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cHR-5v-kM8" secondAttribute="trailing" id="oyk-U0-mxZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="feedTextView" destination="cHR-5v-kM8" id="SUz-Qv-h2r"/>
+                        <outlet property="sendFeed" destination="da9-2A-Skl" id="IcY-Zy-xBo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSX-ut-I5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="1748"/>
         </scene>
         <!--Facebook news-->
         <scene sceneID="RCY-c0-e6o">
@@ -90,7 +135,14 @@
                             <constraint firstItem="kZw-3k-aNR" firstAttribute="top" secondItem="gte-vS-dBh" secondAttribute="bottom" id="gRO-Uz-k4D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Facebook news" id="Lha-Ic-aHn"/>
+                    <navigationItem key="navigationItem" title="Facebook news" id="Lha-Ic-aHn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T8w-6E-7bJ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="lQo-8E-BoC" kind="show" id="dzh-TH-f98"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="feedsTableView" destination="gte-vS-dBh" id="TVN-FC-eU6"/>
                     </connections>
@@ -135,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kF8-eG-pTQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="1748"/>
+            <point key="canvasLocation" x="2751" y="1748"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="IpJ-iV-BRS">

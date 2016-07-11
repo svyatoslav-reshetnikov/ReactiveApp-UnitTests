@@ -17,6 +17,7 @@
 		E123BC0B1C56ACC800DFAAF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E123BC091C56ACC800DFAAF1 /* LaunchScreen.storyboard */; };
 		E123BC161C56ACC800DFAAF1 /* ReactiveAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123BC151C56ACC800DFAAF1 /* ReactiveAppTests.swift */; };
 		E123BC211C56ACC800DFAAF1 /* ReactiveAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123BC201C56ACC800DFAAF1 /* ReactiveAppUITests.swift */; };
+		E19247E61D33A84900B5189E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19247E51D33A84900B5189E /* AddPostViewController.swift */; };
 		E19CFC271C69D6D400D16819 /* FeedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CFC261C69D6D400D16819 /* FeedInfoViewController.swift */; };
 		E19CFC291C69E01C00D16819 /* GetFeedInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CFC281C69E01C00D16819 /* GetFeedInfoResponse.swift */; };
 		E19CFC2B1C69E1CE00D16819 /* IdName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19CFC2A1C69E1CE00D16819 /* IdName.swift */; };
@@ -71,6 +72,7 @@
 		E123BC1C1C56ACC800DFAAF1 /* ReactiveAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E123BC201C56ACC800DFAAF1 /* ReactiveAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveAppUITests.swift; sourceTree = "<group>"; };
 		E123BC221C56ACC800DFAAF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E19247E51D33A84900B5189E /* AddPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		E19CFC261C69D6D400D16819 /* FeedInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedInfoViewController.swift; sourceTree = "<group>"; };
 		E19CFC281C69E01C00D16819 /* GetFeedInfoResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFeedInfoResponse.swift; sourceTree = "<group>"; };
 		E19CFC2A1C69E1CE00D16819 /* IdName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdName.swift; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			path = ReactiveAppUITests;
 			sourceTree = "<group>";
 		};
+		E19247E41D33A83500B5189E /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				E19247E51D33A84900B5189E /* AddPostViewController.swift */,
+			);
+			name = AddPost;
+			sourceTree = "<group>";
+		};
 		E19CFC241C69D2BD00D16819 /* GetFeedInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +214,7 @@
 		E1C4C9041C68B21D0023A346 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E19247E41D33A83500B5189E /* AddPost */,
 				E19CFC251C69D6B900D16819 /* FeedInfo */,
 				E1C4C90C1C68BA0D0023A346 /* Feeds */,
 				E1C4C90B1C68BA060023A346 /* Login */,
@@ -545,6 +556,7 @@
 				E1C4C91D1C68D4570023A346 /* FeedTableViewCell.swift in Sources */,
 				E1C4C9181C68CEA20023A346 /* Feed.swift in Sources */,
 				E1C4C9101C68BA9C0023A346 /* Extensions.swift in Sources */,
+				E19247E61D33A84900B5189E /* AddPostViewController.swift in Sources */,
 				E19CFC271C69D6D400D16819 /* FeedInfoViewController.swift in Sources */,
 				E19CFC2B1C69E1CE00D16819 /* IdName.swift in Sources */,
 				E1C4C9011C68A3150023A346 /* LoginViewController.swift in Sources */,

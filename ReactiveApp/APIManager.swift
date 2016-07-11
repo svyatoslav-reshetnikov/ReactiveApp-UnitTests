@@ -49,7 +49,6 @@ class APIManager: APIProtocol {
                 if error != nil {
                     observer.on(.Error(error!))
                 } else {
-                    print(result)
                     let getFeedInfoResponse = Mapper<GetFeedInfoResponse>().map(result)!
                     observer.on(.Next(getFeedInfoResponse))
                     observer.on(.Completed)
