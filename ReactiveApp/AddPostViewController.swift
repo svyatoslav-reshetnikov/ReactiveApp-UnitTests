@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import MBProgressHUD
 
-class AddProfileViewController: UIViewController {
+class AddPostViewController: UIViewController {
     
     @IBOutlet weak var feedTextView: UITextView!
     @IBOutlet weak var sendFeed: UIButton!
