@@ -18,6 +18,8 @@ PODS:
   - RxCocoa (2.1.0):
     - RxSwift (~> 2.0)
   - RxSwift (2.1.0)
+  - RxTests (2.1.0):
+    - RxSwift (~> 2.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -28,6 +30,7 @@ DEPENDENCIES:
   - RxBlocking (~> 2.0)
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0)
+  - RxTests (~> 2.0)
 
 SPEC CHECKSUMS:
   Bolts: f52a250053bb517ca874523c3913776359ab3def
@@ -39,7 +42,8 @@ SPEC CHECKSUMS:
   RxBlocking: fa297def258d85c5beae9ed507f94645260b3747
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
   RxSwift: 110fb07f81c17c2c3b3254d168363057b1880d18
+  RxTests: 94c67ffc37c36bd8c7aec90a84601a3db142be94
 
-PODFILE CHECKSUM: a78318209d0c9fd65f2a1b2539679a510dc6b3d4
+PODFILE CHECKSUM: 70f9ace12f4f5d48adb08509551493021832a80f
 
 COCOAPODS: 1.0.1
