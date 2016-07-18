@@ -11,12 +11,13 @@ import RxCocoa
 import FBSDKCoreKit
 import ObjectMapper
 
-protocol APIProtocol {
+protocol API {
     func getFeeds() -> Observable<GetFeedsResponse>
-    func getFeedInfo(feedId: String) -> Observable<GetFeedInfoResponse> 
+    func getFeedInfo(feedId: String) -> Observable<GetFeedInfoResponse>
+    func addFeed(feedMessage: String) -> Observable<Any>
 }
 
-class APIManager: APIProtocol {
+class APIManager: API {
     
     static let sharedAPI = APIManager()
     

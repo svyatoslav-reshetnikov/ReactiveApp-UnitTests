@@ -32,6 +32,10 @@
 		E1C4C9181C68CEA20023A346 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C4C9171C68CEA20023A346 /* Feed.swift */; };
 		E1C4C91B1C68CF4F0023A346 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C4C91A1C68CF4F0023A346 /* Paging.swift */; };
 		E1C4C91D1C68D4570023A346 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C4C91C1C68D4570023A346 /* FeedTableViewCell.swift */; };
+		E1D5F7651D3CE13B0045F873 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F7641D3CE13B0045F873 /* MockAPI.swift */; };
+		E1D5F7671D3CE4CF0045F873 /* NotImplementedStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F7661D3CE4CF0045F873 /* NotImplementedStubs.swift */; };
+		E1D5F7691D3CE5660045F873 /* MockWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F7681D3CE5660045F873 /* MockWireframe.swift */; };
+		E1D5F76B1D3CF2980045F873 /* TestScheduler+MarbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F76A1D3CF2980045F873 /* TestScheduler+MarbleTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,11 @@
 		E1C4C9171C68CEA20023A346 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		E1C4C91A1C68CF4F0023A346 /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		E1C4C91C1C68D4570023A346 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		E1D5F7611D3CCD840045F873 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../Library/Developer/Xcode/DerivedData/ReactiveApp-bqfeujncqloprlewrnjsqblqdwkk/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		E1D5F7641D3CE13B0045F873 /* MockAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		E1D5F7661D3CE4CF0045F873 /* NotImplementedStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotImplementedStubs.swift; sourceTree = "<group>"; };
+		E1D5F7681D3CE5660045F873 /* MockWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockWireframe.swift; sourceTree = "<group>"; };
+		E1D5F76A1D3CF2980045F873 /* TestScheduler+MarbleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestScheduler+MarbleTests.swift"; sourceTree = "<group>"; };
 		FADDA6F6B81C7BD6E481F307 /* Pods-ReactiveApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveApp/Pods-ReactiveApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +182,9 @@
 		E123BC141C56ACC800DFAAF1 /* ReactiveAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				E1D5F7631D3CE1240045F873 /* Mocks */,
 				E123BC151C56ACC800DFAAF1 /* ReactiveAppTests.swift */,
+				E1D5F76A1D3CF2980045F873 /* TestScheduler+MarbleTests.swift */,
 				E123BC171C56ACC800DFAAF1 /* Info.plist */,
 			);
 			path = ReactiveAppTests;
@@ -280,9 +291,20 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		E1D5F7631D3CE1240045F873 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E1D5F7641D3CE13B0045F873 /* MockAPI.swift */,
+				E1D5F7661D3CE4CF0045F873 /* NotImplementedStubs.swift */,
+				E1D5F7681D3CE5660045F873 /* MockWireframe.swift */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
 		FC2D8030DE3205FA3E93170B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1D5F7611D3CCD840045F873 /* FBSDKLoginKit.framework */,
 				6EC2653026A0DCC689142C45 /* Pods_ReactiveApp.framework */,
 				97F7D9DAF159F11F81741F48 /* Pods_ReactiveAppTests.framework */,
 				524B9B3CB67FDDF046283FA2 /* Pods_ReactiveAppUITests.framework */,
@@ -579,6 +601,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D5F7671D3CE4CF0045F873 /* NotImplementedStubs.swift in Sources */,
+				E1D5F76B1D3CF2980045F873 /* TestScheduler+MarbleTests.swift in Sources */,
+				E1D5F7651D3CE13B0045F873 /* MockAPI.swift in Sources */,
+				E1D5F7691D3CE5660045F873 /* MockWireframe.swift in Sources */,
 				E123BC161C56ACC800DFAAF1 /* ReactiveAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
