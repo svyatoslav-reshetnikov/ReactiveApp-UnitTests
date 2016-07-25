@@ -23,6 +23,8 @@ class GetFeedInfoResponse: Mappable {
     var type: String!
     var updatedTime: String!
     
+    init() {}
+    
     required init?(_ map: Map){
         
     }

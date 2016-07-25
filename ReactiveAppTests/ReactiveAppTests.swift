@@ -21,16 +21,18 @@ class ReactiveAppTests: XCTestCase {
         "#u" : NSError(domain: NSURLErrorDomain, code: NSURLErrorTimedOut, userInfo: nil)
     ]
     
-    let stringValues = [
-        "h" : "Hello",
-        "u2" : "secretuser",
-        "u3" : "secretusername",
-        "p1" : "huge secret",
-        "p2" : "secret",
+    let textValues = [
+        "ft" : "feed",
         "e" : ""
     ]
     
-    let feed = []
+    let feeds = [
+        "fs" : GetFeedsResponse()
+    ]
+    
+    let feedInfo = [
+        "fi" : GetFeedInfoResponse()
+    ]
     
     override func setUp() {
         super.setUp()
@@ -42,49 +44,66 @@ class ReactiveAppTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_addFeed() {
-        //let scheduler = TestScheduler(initialClock: 0, resolution: resolution, simulateProcessingDelay: false)
+    func testAddFeed_testEnabledUserInterfaceElements() {
+        let scheduler = TestScheduler(initialClock: 0, resolution: resolution, simulateProcessingDelay: false)
+        
+        // mock the universe
+        let mock = mockAPI(scheduler)
+        
+        // expected events and test data
+        let (
+        feedTextEvents,
+            buttonTapEvents,
+                
+                expectedValidatedTextEvents,
+                    expectedSendFeedEnabledEvents
+                        ) = (
+                            scheduler.parseEventsAndTimes("e----------ft------", values: textValues).first!,
+                            scheduler.parseEventsAndTimes("-----------------x-", values: events).first!,
+                                    
+                            scheduler.parseEventsAndTimes("f----------t-------", values: booleans).first!,
+                            scheduler.parseEventsAndTimes("f----------t-------", values: booleans).first!
+        )
+        
+        let wireframe = MockWireframe()
+        
+        let viewModel = AddPostViewModel(
+            input: (
+                feedText: scheduler.createHotObservable(feedTextEvents).asObservable(),
+                sendButton: scheduler.createHotObservable(buttonTapEvents).asObservable()
+            ),
+            dependency: (
+                API: mock,
+                wireframe: wireframe
+            )
+        )
+        
+        // run experiment
+        let recordedSendFeedEnabled = scheduler.record(viewModel.sendEnabled)
+        let recordedValidatedTextEvents = scheduler.record(viewModel.validatedText)
+        
+        scheduler.start()
+        
+        // validate
+        XCTAssertEqual(recordedValidatedTextEvents.events, expectedValidatedTextEvents)
+        XCTAssertEqual(recordedSendFeedEnabled.events, expectedSendFeedEnabledEvents)
     }
 }
 
 // MARK: Mocks
 
-/*extension ReactiveAppTests {
+extension ReactiveAppTests {
     func mockAPI(scheduler: TestScheduler) -> API {
         return MockAPI(
-            getFeeds: scheduler.mock(booleans, errors: errors) { _ -> String in
-                if username == "secretusername" {
-                    return "---t"
-                }
-                else if username == "secretuser" {
-                    return "---#1"
-                }
-                else {
-                    return "---f"
-                }
+            getFeeds: scheduler.mock(feeds, errors: errors) { _ -> String in
+                return "--fs"
             },
-            getFeedInfo: scheduler.mock(booleans, errors: errors) { _ -> String in
-                if username == "secretusername" {
-                    return "---t"
-                }
-                else if username == "secretuser" {
-                    return "---#1"
-                }
-                else {
-                    return "---f"
-                }
+            getFeedInfo: scheduler.mock(feedInfo, errors: errors) { _ -> String in
+                return "--fi"
             },
-            addFeed: scheduler.mock(booleans, errors: errors) { _ -> String in
-                if username == "secretusername" {
-                    return "---t"
-                }
-                else if username == "secretuser" {
-                    return "---#1"
-                }
-                else {
-                    return "---f"
-                }
+            addFeed: scheduler.mock(textValues, errors: errors) { _ -> String in
+                return "--ft"
             }
         )
     }
-}*/
+}

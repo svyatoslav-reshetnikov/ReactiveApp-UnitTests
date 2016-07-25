@@ -14,12 +14,12 @@ class MockAPI : API {
     
     let _getFeeds: () -> Observable<GetFeedsResponse>
     let _getFeedInfo: (String) -> Observable<GetFeedInfoResponse>
-    let _addFeed: (String) -> Observable<Any>
+    let _addFeed: (String) -> Observable<AnyObject>
     
     init(
         getFeeds: () -> Observable<GetFeedsResponse> = notImplemented(),
         getFeedInfo: (String) -> Observable<GetFeedInfoResponse> = notImplemented(),
-        addFeed: (String) -> Observable<Any> = notImplemented()
+        addFeed: (String) -> Observable<AnyObject> = notImplemented()
         ) {
         _getFeeds = getFeeds
         _getFeedInfo = getFeedInfo
@@ -34,7 +34,7 @@ class MockAPI : API {
         return _getFeedInfo(feedId)
     }
     
-    func addFeed(feedMessage: String) -> Observable<Any> {
+    func addFeed(feedMessage: String) -> Observable<AnyObject> {
         return _addFeed(feedMessage)
     }
 }

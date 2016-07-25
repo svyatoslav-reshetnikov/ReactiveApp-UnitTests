@@ -14,7 +14,7 @@ import ObjectMapper
 protocol API {
     func getFeeds() -> Observable<GetFeedsResponse>
     func getFeedInfo(feedId: String) -> Observable<GetFeedInfoResponse>
-    func addFeed(feedMessage: String) -> Observable<Any>
+    func addFeed(feedMessage: String) -> Observable<AnyObject>
 }
 
 class APIManager: API {
@@ -62,7 +62,7 @@ class APIManager: API {
         }
     }
     
-    func addFeed(feedMessage: String) -> Observable<Any> {
+    func addFeed(feedMessage: String) -> Observable<AnyObject> {
         return Observable.create { observer in
             let parameters = ["message": feedMessage]
             let addFeedRequest = FBSDKGraphRequest.init(graphPath: "me/feed", parameters: parameters, HTTPMethod: "POST")

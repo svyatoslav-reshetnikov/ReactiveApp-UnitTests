@@ -13,6 +13,8 @@ class GetFeedsResponse: Mappable {
     var data = [Feed]()
     var paging: Paging!
     
+    init() {}
+    
     required init?(_ map: Map){
         
     }

@@ -18,14 +18,14 @@ class AddPostViewModel {
     let indicator: Observable<Bool>
     
     // Has feed send in
-    let sendedIn: Observable<Any>
+    let sendedIn: Observable<AnyObject>
     
     init(input: (
         feedText: Observable<String>,
         sendButton: Observable<Void>
         ),
          dependency: (
-        API: APIManager,
+        API: API,
         wireframe: Wireframe
         )
         ) {
@@ -42,11 +42,12 @@ class AddPostViewModel {
             .shareReplay(1)
         
         sendedIn = input.sendButton.withLatestFrom(input.feedText)
-            .flatMap { feedText -> Observable<Any> in
+            .flatMap { feedText -> Observable<AnyObject> in
                 return API.addFeed(feedText).trackView(indicator)
             }
             .catchError { error in
-                return wireframe.promptFor((error as NSError).localizedDescription, cancelAction: "OK", actions: [])
+                let nsError = error as NSError
+                return wireframe.promptFor(nsError.localizedDescription, cancelAction: "OK", actions: [])
                     .map { _ in
                         return error
                     }
