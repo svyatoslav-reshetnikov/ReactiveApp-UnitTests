@@ -15,10 +15,10 @@ let resolution: NSTimeInterval = 0.2 // seconds
 class ReactiveAppTests: XCTestCase {
     
     let booleans = ["t" : true, "f" : false]
+    // Для событий кнопки
     let events = ["x" : ()]
     let errors = [
         "#1" : NSError(domain: "Some unknown error maybe", code: -1, userInfo: nil),
-        "#u" : NSError(domain: NSURLErrorDomain, code: NSURLErrorTimedOut, userInfo: nil)
     ]
     
     let textValues = [
@@ -91,7 +91,6 @@ class ReactiveAppTests: XCTestCase {
 }
 
 // MARK: Mocks
-
 extension ReactiveAppTests {
     func mockAPI(scheduler: TestScheduler) -> API {
         return MockAPI(
