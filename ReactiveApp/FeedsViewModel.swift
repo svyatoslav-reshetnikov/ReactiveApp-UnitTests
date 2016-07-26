@@ -18,10 +18,10 @@ class FeedsViewModel {
     let indicator: Observable<Bool>
     
     init(input: (
-        UITableView
+        Observable<Feed>
         ),
         dependency: (
-        API: APIManager,
+        API: API,
         wireframe: Wireframe
         )
         ) {
@@ -48,7 +48,6 @@ class FeedsViewModel {
                 .shareReplay(1)
             
             clickObservable = input
-                .rx_modelSelected(Feed)
                 .flatMap { feed  in
                     return API.getFeedInfo(feed.id)
                         .trackView(indicator)

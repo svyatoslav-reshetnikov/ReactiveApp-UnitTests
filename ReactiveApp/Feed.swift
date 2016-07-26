@@ -15,6 +15,11 @@ class Feed: Mappable {
     var story: String?
     var message: String?
     
+    init(createdTime time: String, feedId id: String) {
+        self.createdTime = time
+        self.id = id
+    }
+    
     required init?(_ map: Map){
         
     }

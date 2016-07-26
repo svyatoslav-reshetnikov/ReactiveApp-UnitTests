@@ -15,13 +15,17 @@ class FeedsViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var feedsTableView: UITableView!
     
+    let feeds = Variable([Feed]())
+    
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let viewModel = FeedsViewModel(
-            input:feedsTableView,
+            input: (
+                feedsTableView.rx_modelSelected(Feed).asObservable()
+            ),
             dependency: (
                 API: APIManager.sharedAPI,
                 wireframe: DefaultWireframe.sharedInstance

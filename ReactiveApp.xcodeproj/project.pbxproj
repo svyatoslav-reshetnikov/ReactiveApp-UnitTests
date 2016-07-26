@@ -36,6 +36,7 @@
 		E1D5F7671D3CE4CF0045F873 /* NotImplementedStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F7661D3CE4CF0045F873 /* NotImplementedStubs.swift */; };
 		E1D5F7691D3CE5660045F873 /* MockWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F7681D3CE5660045F873 /* MockWireframe.swift */; };
 		E1D5F76B1D3CF2980045F873 /* TestScheduler+MarbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5F76A1D3CF2980045F873 /* TestScheduler+MarbleTests.swift */; };
+		E1F3C5E01D47843400548B7D /* MockFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3C5DF1D47843400548B7D /* MockFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		E1D5F7661D3CE4CF0045F873 /* NotImplementedStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotImplementedStubs.swift; sourceTree = "<group>"; };
 		E1D5F7681D3CE5660045F873 /* MockWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockWireframe.swift; sourceTree = "<group>"; };
 		E1D5F76A1D3CF2980045F873 /* TestScheduler+MarbleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestScheduler+MarbleTests.swift"; sourceTree = "<group>"; };
+		E1F3C5DF1D47843400548B7D /* MockFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFeed.swift; sourceTree = "<group>"; };
 		FADDA6F6B81C7BD6E481F307 /* Pods-ReactiveApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveApp/Pods-ReactiveApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,6 +299,7 @@
 				E1D5F7641D3CE13B0045F873 /* MockAPI.swift */,
 				E1D5F7661D3CE4CF0045F873 /* NotImplementedStubs.swift */,
 				E1D5F7681D3CE5660045F873 /* MockWireframe.swift */,
+				E1F3C5DF1D47843400548B7D /* MockFeed.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				E1D5F7651D3CE13B0045F873 /* MockAPI.swift in Sources */,
 				E1D5F7691D3CE5660045F873 /* MockWireframe.swift in Sources */,
 				E123BC161C56ACC800DFAAF1 /* ReactiveAppTests.swift in Sources */,
+				E1F3C5E01D47843400548B7D /* MockFeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

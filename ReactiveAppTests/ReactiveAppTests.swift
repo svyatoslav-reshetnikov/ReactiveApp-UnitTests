@@ -34,6 +34,14 @@ class ReactiveAppTests: XCTestCase {
         "fi" : GetFeedInfoResponse()
     ]
     
+    let feedArray = [
+        "fa" : [Feed]()
+    ]
+    
+    let feed = [
+        "f" : Feed(createdTime: "1", feedId: "1")
+    ]
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -44,7 +52,7 @@ class ReactiveAppTests: XCTestCase {
         super.tearDown()
     }
     
-    func testAddFeed_testEnabledUserInterfaceElements() {
+    func testAddFeed() {
         let scheduler = TestScheduler(initialClock: 0, resolution: resolution, simulateProcessingDelay: false)
         
         // mock the universe
@@ -87,6 +95,42 @@ class ReactiveAppTests: XCTestCase {
         // validate
         XCTAssertEqual(recordedValidatedTextEvents.events, expectedValidatedTextEvents)
         XCTAssertEqual(recordedSendFeedEnabled.events, expectedSendFeedEnabledEvents)
+    }
+    
+    func testFeeds() {
+        let scheduler = TestScheduler(initialClock: 0, resolution: resolution, simulateProcessingDelay: false)
+        
+        // mock the universe
+        let mock = mockAPI(scheduler)
+        
+        // expected events and test data
+        let (
+        expectedClickCell,
+            expectedClickObservable
+                ) = (
+                    scheduler.parseEventsAndTimes("----f--------------", values: feed).first!,
+                    scheduler.parseEventsAndTimes("----------fi-------", values: feedInfo).first!
+        )
+        
+        let wireframe = MockWireframe()
+        
+        let viewModel = FeedsViewModel(
+            input: (
+                scheduler.createHotObservable(expectedClickCell).asObservable()
+            ),
+            dependency: (
+                API: mock,
+                wireframe: wireframe
+            )
+        )
+        
+        // run experiment
+        let recordedClickObservable = scheduler.record(viewModel.clickObservable)
+        
+        scheduler.start()
+        
+        // validate
+        XCTAssertEqual(recordedClickObservable.events.count, expectedClickObservable.count)
     }
 }
 

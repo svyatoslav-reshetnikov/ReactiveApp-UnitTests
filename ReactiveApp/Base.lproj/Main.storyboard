@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Cz-oA-cSC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Cz-oA-cSC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="554" y="1748"/>
         </scene>
-        <!--Add Profile View Controller-->
+        <!--Add Post View Controller-->
         <scene sceneID="5Y2-I8-NPX">
             <objects>
-                <viewController id="lQo-8E-BoC" customClass="AddProfileViewController" customModule="ReactiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lQo-8E-BoC" customClass="AddPostViewController" customModule="ReactiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FoV-8O-s1N"/>
                         <viewControllerLayoutGuide type="bottom" id="OQy-ae-Jw8"/>
@@ -63,8 +63,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="feedTextView" destination="cHR-5v-kM8" id="SUz-Qv-h2r"/>
-                        <outlet property="sendFeed" destination="da9-2A-Skl" id="IcY-Zy-xBo"/>
+                        <outlet property="feedTextView" destination="cHR-5v-kM8" id="MHd-0K-g90"/>
+                        <outlet property="sendFeed" destination="da9-2A-Skl" id="rzR-h0-9Je"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSX-ut-I5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
